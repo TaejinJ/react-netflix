@@ -30,7 +30,7 @@ export default function Nav() {
       {/* 여기 드롭다운메뉴통해서 옵션넣기 */}
       <img
         alt="User logged"
-        src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo.png"
+        src="https://img.freepik.com/premium-vector/ok-and-good-luck-sign-concept_140689-3644.jpg"
         className="nav_avatar"
       />
       {/* 로그인안되어있을때는 로그인 / 로그인되어있을땐 로그아웃 버튼기능 */}
