@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Nav.css";
+
 export default function Nav() {
   const [show, setShow] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
+
       if (window.scrollY > 50) {
         setShow(true);
       } else {
@@ -12,9 +18,14 @@ export default function Nav() {
     });
 
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", () => { });
     };
   }, []);
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    navigate(`/search?q=${e.target.value}`);
+  };
 
   return (
     <nav className={`nav ${show && "nav_black"} `}>
@@ -23,17 +34,22 @@ export default function Nav() {
         alt="Netflix logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
         className="nav_logo"
-        onClick={() => {
-          window.location.reload();
-        }}
+        onClick={() => (window.location.href = "/")}
       />
-      {/* 여기 드롭다운메뉴통해서 옵션넣기 */}
+
+      <input
+        value={searchValue}
+        onChange={handleChange}
+        className="nav__input"
+        type="text"
+        placeholder="영화를 검색해주세요."
+      />
+
       <img
         alt="User logged"
         src="https://img.freepik.com/premium-vector/ok-and-good-luck-sign-concept_140689-3644.jpg"
         className="nav_avatar"
       />
-      {/* 로그인안되어있을때는 로그인 / 로그인되어있을땐 로그아웃 버튼기능 */}
     </nav>
   );
 }
