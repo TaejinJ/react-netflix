@@ -19,11 +19,7 @@ export default function MainPage() {
         id="AM"
         fetchUrl={requests.fetchActionMovies}
       />
-      <Row
-        title="Comedy Movies"
-        id="CM"
-        fetchUrl={requests.fetchRomanceMovies}
-      />
+
     </div>
   );
 }

@@ -52,6 +52,7 @@ export default function SearchPage() {
                     className="movie__poster"
                   />
                 </div>
+                <h3 className="movie__title"> {movie.name ? movie.name : movie.title}</h3>
               </div>
             );
           }
