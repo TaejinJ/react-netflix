@@ -19,6 +19,7 @@ export default function Nav() {
 
     return () => {
       window.removeEventListener("scroll", () => { });
+
     };
   }, []);
 

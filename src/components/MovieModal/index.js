@@ -31,7 +31,8 @@ function MovieModal({
               {release_date ? release_date : first_air_date}
             </p>
             <h2 className="modal__title">{title ? title : name}</h2>
-            <p className="modal__overview">평점 : ⭐{vote_average}</p>
+            <p className="modal__overview">평점 : ⭐{vote_average.toFixed(2)}</p>
+             {/* toFixed()를통해 소숫점 처리 */}
             <p className="modal__overview">{overview}</p>
           </div>
         </div>
